@@ -1,0 +1,389 @@
+Comprehensive list of Gamecube dev stuff
+
+It would be really helpful if there was a list somewhere with pictures and explanations of all of the various Gamecube Dev hardware. Shiggsy has one on his site, but it has not been updated for a while.
+
+I was hoping to start one here. Are there any objections to this?
+
+I'll start with basics:
+
+Gamecube NR Reader:
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NR-Reader provides your testing team with a hardware
+environment that is as close to production as possible without
+requiring the creation of final discs. The NR-Reader is identical
+to a production NINTENDO GAMECUBE console, except that
+the NR-Reader’s optical disc drive mechanism accepts only
+proprietary NR-Discs written using the NR-Writer.
+
+
+This console is almost identical to a retail Gamecube. The only physical difference is a switch on the side that changed the region between Japanese and NTSC (JPN and USA). The region switch changes the language of the Gamecube menu, as well as letting the Gamecube boot NR discs from Japan and USA.
+
+The main difference between this Gamecube and a standard Gamecube is the firmware of the DVD drive. The firmware handles the differences between the NR discs and the retail discs. The actual motherboard does not play any sort of role. In fact, it is possible to install a DVD drive from an NR Gamecube in a retail Gamecube to allow the retail Gamecube to read NR discs or vise versa.
+
+NR Disc
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+NR-Discs are not the same as production NINTENDO GAMECUBE
+optical discs. NR-Discs will not work in production hardware,
+and production discs will not work in NR-Readers. (An NR-
+Disc is shown in the photo of the NR-Reader on page 3.)
+
+These discs require special burners, but do not require a special program to read or burn the discs. Since the firmware of the NR Writer(below) handles everything, IMGBurn can read and write to these discs(assuming you have the NR writer with proper firmware).
+
+NR Writer
+
+[​IMG]
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NR-Writer is an optical disc writer that creates NR-Discs.
+Although it looks like a standard DVD-R with SCSI interface,
+it’s much cooler! The NR-Writer is specifically designed to
+produce 8cm NR-Discs. The NR-Writer software only accepts
+GCM files (see below). The NR-Writer can burn a GCM disc
+image to an NR-Disc in about 20 minutes. You can daisy-chain
+up to four NR-Writers on a single SCSI card, allowing multiple
+disc images to be burned simultaneously.
+
+
+These drives were not used exclusively by Nintendo. They were used for a variety of purposes in the non-gaming industry. Nintendo released special firmware for the drive along with a special drive flasher to turn it into an NR writer.
+
+What relationship did Nintendo have with Panasonic that gave them the ability to make firmware for these drives?
+Was this part of the partnership that led to the Panasonic Q?
+Were these drives developed for Nintendo, or did they already exist?
+
+
+NPDP-GDEV(This is listed as a "Development Solution".)
+
+[​IMG]
+[​IMG]
+[​IMG]
+
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NPDP-GDEV is another NINTENDO
+GAMECUBE development and optical disc
+emulation system. The NPDP-GDEV uses
+the hard disk and CPU of the host PC to
+perform NINTENDO GAMECUBE optical
+disc emulation. The SCSI host connection
+channels real-time debug information
+supported by both Metrowerks CodeWarrior
+and SN Systems ProDG debuggers. The
+NPDP-GDEV also provides an NPDP-
+Cartridge slot for an alternative disc
+emulation method. The heart of this system is
+the NINTENDO GAMECUBE ORCA board
+(see page 5).
+
+Does this mean that you could stream games to the NPDP-GDEV from the host PC?
+What does it mean "uses the CPU of the host computer"? Was it unable to function with out offloading some work to the host PC?
+
+--------------Beta GDEV--------------
+[​IMG]
+
+Nintendo sent out GDEVs and GBOXs before the hardware specs were finalized. These units are marked "β release"(Look below GDEV logo). Most of these units were sent back to Nintendo to have their ORCAs upgraded. These are still labeled as betas, but are hardware identical to final units.
+
+(info courtesy barcode)
+
+
+NPDP-GBOX(This is listed as a "Testing Solution".)
+[​IMG]
+
+[​IMG]
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NPDP-GBOX is a cost-effective solution
+for testing and debugging. This stand-alone
+unit accepts NPDP-Cartridges that emulate
+the NINTENDO GAMECUBE optical disc.
+Up to four disc images can be stored on a
+single NPDP-Cartridge (see page 6). The
+system provides front panel controls for
+emulating game disc cover opening and
+closing, and for emulating game disc
+swapping.
+
+The NPDP-GBOX is the only testing solution
+that offers two real-time communication
+channels for optional connection to a PC.
+First, the NPDP-GBOX can be connected to a
+host PC using the built-in USB2EXI device. With this
+connection, your development team can fine-tune your game by
+exchanging textures, sounds and other data. Second, a built-in
+serial cable provides debug output via the OS libraries.
+
+The other major benefit of the NPDP-GBOX is that it has 48
+MB of main memory. This allows your testing team to utilize
+any additional functionality that your developers have implemented.
+
+The NPDP-GBOX cannot write to an NPDP-Cartridge. Game
+disc images must be written to NPDP-Cartridges using the
+NPDP-GW cartridge writer.
+
+
+With the right jumper settings, the GBOX can act as a standard NPDP-reader.
+
+    (Barc0de says):
+    The NPDP-GBOX does not use an ODEM. It debugs just fine over RS-232/ DB9 to any supporting host computer.
+
+    Game "cartridges" (HDDs with an SH3 and a couple of other tricks) can be played just fine if you adjust the switches (before booting, careful!!) just as they would on an NPDP-Reader (pictured in Assembler's avatar) with the difference being that the NPDP-Reader does not support real time debug information without the use of an add-on at the bottom..very rare shit.
+
+Note: "very rare shit" = IS-DOL-VIEWER
+
+--------------Beta GBOX--------------
+Nintendo sent out GDEVs and GBOXs before the hardware specs were finalized. These units are marked "β release". Most of these units were sent back to Nintendo to have their ORCAs upgraded. These are still labeled as betas, but are hardware identical to final units.
+(info courtesy barcode)
+
+
+ODEM PCI Card
+[​IMG]
+Short one is the newer ODEM PCI card. The long one is an older ODEM PCI card. You can see the "beta release" sticker on it.
+
+    (Barcode)
+    The ODEM PCI card is used for Optical Disc Emulation (on the PC side),and it corresponds with an extra card inside the target box, which the GDEV has and the GBOX lacks. That is their only difference, and even then you can probably add a card inside your GBOX to turn it into a GDEV, provided you can find a spare.
+
+ODEM card for GDEV
+[​IMG]
+
+This is the card that is discussed in the above quote.
+NDPD-Console
+[​IMG]
+
+
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NPDP-Console is essentially a production NINTENDO
+GAMECUBE, except that its optical disc drive mechanism has
+been replaced with a NPDP-Cartridge interface. Front panel
+controls emulate game disc cover opening and closing and
+disc swapping.
+
+This is really just a standard Gamecube with a highly modified DVD drive. It can't do anything too terribly special.
+It was never very popular as dev studios.
+
+IS-DOL-VIEWER
+
+[​IMG]
+
+Atatches to the bottom of the NDPD-Console.
+
+This could allow debug capabilities over an RS-232 cable to a host computer. It provided the same functionality as a GBOX, but not a GDEV.
+
+This unit is very rare. Possibly the rarest Gamecube item in existence. The above graphic is the only one that I could find.
+
+The only reason this is on the list is because the Gamecube Service Disc, which was distributed to authorized repair centers before they were shut down, allows you to see if one is connected to the Gamecube.
+
+
+NPDP-Cartridge
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NPDP-Cartridge is a removable, rewritable
+NINTENDO GAMECUBE optical disc emulation cartridge.
+It is the main medium of the
+NPDP series of products. Each cartridge stores up to four 1.4GB
+optical disc images. (The actual size of the NINTENDO
+GAMECUBE Game Disc is 1,459,978,240 bytes, or 1.46 billion
+bytes.)
+
+The NPDP-Cartridge consists of a high speed drive and
+controller. The controller firmware manages all the emulation
+parameters and can be modified via the NPDP-GW.
+
+
+These carts were extremely fragile. They were also expensive and covered in safety seals designed to detect abuse. These carts did not last long in a standard workplace environment. Even the rigors of everyday use could trip the seals.
+
+SN-TDEV
+[​IMG]
+
+This was a cheaper alternative to the GDEV. It has a USB 2.0 connection on the bottom so that programs can be streamed from a host PC. It also had had twice the RAM of a stock Gamecube. Some university used these for their programming classes.
+
+
+It can only read NR discs, has double the RAM of an NR-Reader/normal GC and is used for development of games and debugging.
+
+The overall advantage of it is that the disc is comes with enables you to send graphics to it right away (assuming you have the right software and the USB cable) and you can see what they all look like and whatnot.
+(/splith)
+
+The TDEV was a development kit built by SN Systems and Nintendo to work with SN Systems Prodg software. This picture is only half the kit its missing it PC interface and the NR disc, It was designed to be a low cost alternative to other Nintendo kits.
+(/icarusnick)
+
+T-dev works using an interface that has an expiring certificate.
+All units without the certificate are useless past being a collectible.
+If the certificate for use expires, the hardware no longer works; it locks you out.
+
+You need to be an educational institution participating in the T-Dev program and
+get fresh certs which last only a semester's length of time.
+(/ASSEMbler)
+
+
+Interface and NR disc
+(This is here in case any information becomes available about the associated NR disc and PC interface of the TDEV)
+
+    from what I remember when I looked at them it was just an ASIC, some memory for buffer and USB chip which goes to the PC
+
+(/splith)
+
+
+
+
+NPDP-GW
+
+[​IMG]
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4):
+The NPDP-GW is a high-speed gang writer capable of writing
+game disc images to as many as eight NPDP-Cartridges at once.
+By daisy-chaining up to four NPDP-GW systems, you can write
+to a maximum of 32 NPDP-Cartridges simultaneously. Burning
+full disc images onto NPDP-Cartridges takes about five minutes.
+
+The NPDP-Writer GUI-based software mounts and writes data
+to the NPDP-Cartridges. It sets all available NPDP-Cartridge
+settings, such as the default boot disc image, and even updates
+firmware. Using this software, you can compare the disc image
+on an NPDP-Cartridge with the original image on your
+PC. There is also a GUI for generating a master binary
+disc image (GCM; see page 4) for NR-Readers and
+game submission.
+
+
+
+NPDP-SW
+
+[​IMG]
+
+Similar to the NPDP-GW, but only able to write a single NPDP-Cartridge at a time.
+
+DDH (This is listed as a "Development Solution".)
+FAQ: http://www.assemblergames.com/forums/showthread.php?t=10159
+
+[​IMG]
+[​IMG]
+
+
+[​IMG]
+
+[​IMG]
+(NINTENDO GAMECUBE Development News, v4):
+AMC's Dolphin Development Hardware
+(DDH) is a NINTENDO GAMECUBE
+development and optical disc emulation
+system. The internal DDH controller board
+(“Marlin”) and an internal hard disk emulate
+the NINTENDO GAMECUBE optical disc.
+The emulation parameters are determined and
+configured by the firmware installed on the
+Marlin. The DDH provides a real-time
+debugging channel via an Ethernet
+connection supported by both Metrowerks
+CodeWarrior and SN Systems ProDG
+debuggers. As with all development systems,
+the maturity of the DDH is determined by the
+ORCA board (see page 5) and the disc
+emulation software
+
+-------------Beta DDH--------------
+
+Nintendo released a beta DDH that ran at half the speed of a stock gamecube. Also, it used RJ-11(similar to a phone jack) ports instead of Gamecube ports.
+There is a chart at the bottom of this post that has the different board revisions for ORCA. I presume that Marlin's specs matched closely to the ORCA's listed in the chart.
+
+ORCA
+
+[​IMG][​IMG](NINTENDO GAMECUBE Development News, v4, somewhat paraphrased):
+The ORCA board is the heart of every development solution. It
+contains the CPU, the graphics processor, and the main
+memory. Although there are different versions of the ORCA
+board, they are all designed to work in the DDH, NPDP-GDEV,
+and NPDP-GBOX.
+
+ORCA boards are supplied with the following daughter cards:
+-Video card. The final video card has the component video
+connector and a final-spec 9-bit video DAC.
+-EXI boards. These provide a hardware interface for EXI
+devices.
+-Boot-ROM. This contains the Initial Program Loader
+software.
+-Serial connector. This provides debug output directly from
+the ORCA board, and accounts for one of the communication
+channels of every ORCA-equipped system.
+
+FINAL SPECS FOR ORCA
+CPU clock speed..........486
+GP clock speed............162
+Audio DSP clock speed..81
+Main SRAM..................48MB
+Boot ROM....................0.93A
+
+USB2EXI(USB-Adapter)
+
+[​IMG]
+
+(NINTENDO GAMECUBE Development News, v4)
+The USB2EXI device can be used as a communication link
+between NPDP-GDEVs, NPDP-GBOXs, DDHs, and a host PC.
+This device connects from an EXI port on the development
+system to the USB port of any USB-capable PC. Many
+developers have incorporated this device as a critical component
+in their game development process. Look for a screen shot
+utility using the USB2EXI device on our website.
+
+The USB2EXI pictured above is a beta version.
+
+The one below is final. The connector looks more like a memory card, but functionality was the same as the beta.
+
+[​IMG]
+
+Memory card emulator
+
+[​IMG]
+
+
+
+This has eight dip switches on the front, five being active.
+
+It is used to debug and develop games by allowing the user to emulate the full range of memory card functions in realtime. It is simple to use and it works on all GameCube systems from development to retail.
+
+
+Dolphin Controller Test
+
+This is a beta controller from around 1999. It uses the same RJ-11 connector that the AMC DDH beta used.
+
+
+Beta ORCA specs
+D=revision
+
+D1...............HW1_Drip (4MB RAM prototype)
+D2...............375/150 clocked HW1
+D3...............375/150 clocked HW2
+D3.4, D4.4....486/162 clocked HW2
+D5...............Final spec (See ORCA part of this post)
+
+
+
+Hardware I am missing:
+PCI cards for computers. I have a pic of a WIF and ODEM, but were there more?
+
+Reminder: (So that I don't forget)
+The Service disc mentions a serial port 2 accessory for SN. I believe it is the only one. I need to find more info.
+---SS
+It also mentions the IS-DOL-VIEWER, thus confirming its existence.
+---Now, I need to post the screen shot of this.
+
+--Old Engineer seems to have let his site expire. All pictures were lost from the guide, (he was the host) but I have copies saved. I'll re-up them.
+
+
+Thoughts, information and PICTURES(!!) would be nice. I tried to stay away from photos taken by members. If you are okay with my using your picture, let me know! These photos from the newsletter are awful. 
