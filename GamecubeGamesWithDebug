@@ -1,0 +1,63 @@
+After looking through all the PS1/PS2 games with debug symbols I thought I would give it a go for Nintendos first retail CD-based console the Gamecube.
+
+Gamecube games are initially developed as PowerPC Big-Endian ELF files and then converted to the DOL executable format before running on the hardware.
+
+There are tools available to convert ELF files to DOL, including the official SDK from Nintendo, but they all strip-out the developer debug symbols. Presumably, this is because there is no section in the DOL format for storing these symbols, but please correct me if I'm wrong.
+
+This means there are 2 ways to find debug symbols on gamecube disks, one is to check to see if the original .elf file is also available on the disk, and the other is to look for a .map or .sym file ont he disk that matches the .dol file available.
+
+Here is the list of Retail Gamecube games I have found with debug symbols so far:
+
+    007 - Agent Under Fire
+    007 - Everything or Nothing
+    Backyard Sports - Baseball 2007 (USA)
+    Bakuten Shoot Beyblade 2002 - Nettou! Magne Tag Battle! (Japan)
+    Beyblade VForce - Super Tournament Battle
+    Big Air Freestyle
+    Black & Bruised
+    BloodRayne (United Kingdom)
+    Blowout (USA)
+    Bratz - Rock Angelz (France)
+    Crash Bandicoot - The Wrath of Cortex (USA)
+    Crash Bandicoot 4 - Sakuretsu! Majin Power (Japan)
+    Cubix Robots for Everyone - Showdown (USA)
+    Dark Summit (USA)
+    Densetsu no Quiz Ou Ketteisen (Japan)
+    Disney-Pixar Cars (USA)
+    Disney-Pixar Finding Nemo (USA) (v1.00)
+    Disney-Pixar Ratatouille (France)
+    Disney-Pixar The Incredibles - Rise of the Underminer
+    Disney-Pixar The Incredibles (USA)
+    Disney-Pixar Die Unglaublichen (The Incredibles) (Germany) (Disc 1)
+    Disney's Piglet's Big Game (United Kingdom)
+    Doshin the Giant
+    Fairly OddParents, The - Breakin' da Rules (USA)
+    Finding Nemo (United Kingdom)
+    Freedom Fighters (United Kingdom)
+    Freestyle Metal X (USA)
+    Frogger Beyond
+    Harry Potter and the Goblet of Fire (United Kingdom)
+    Hudson Selection Vol. 4 - Takahashi-Meijin no Boukenjima (Japan)
+    Interactive Multi-Game Demo Disk - July 2004
+    Kao the Kangaroo - Round 2 (USA)
+    King Arthur (USA)
+    Legend of Spyro, The - A New Beginning
+    Les Désastreuses Aventures des Orphelins Baudelaire
+    Medal of Honor - European Assault (Germany)
+    Medal of Honor - Rising Sun
+    Mission - Impossible - Operation Surma
+    Namco Museum 50th Anniversary
+    Need for Speed - Underground (Player's Choice) (United Kingdom)
+    Nickelodeon SpongeBob SquarePants - Creature from the Krusty Krab (United Kingdom)
+    Super Mario Strikers (Japan)
+    SX Superstar
+    Tetris Worlds (Japan)
+    UFC - Throwdown
+    ZooCube (Japan)
+
+
+I have also mirrored this list on my website with some additional information such as how many symbols are in each game: http://www.retroreversing.com/gamecube-debug-symbols
+
+Does anyone know of any more retail/prototype games that have debug symbols in them, or prototype games where it would be possible to get the source code?
+
+Many thanks 
