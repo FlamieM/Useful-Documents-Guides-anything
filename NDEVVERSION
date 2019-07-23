@@ -1,0 +1,16 @@
+You must have already seen this mentioned in the documentation?
+
+In the first revision of "Revolution Operating System" 27/02/2006 it lists the return values as:
+
+    OS_CONSOLE_RETAIL2 - HW2 production board
+    OS_CONSOLE_RETAIL1 - HW1 production board
+    OS_CONSOLE_DEVHW2 - The second game development system
+    OS_CONSOLE_DEVHW1 - The first game development system
+    OS_CONSOLE_MINNOW - A prototype system without graphical capabilities
+    OS_CONSOLE_ARTHUR - PowerPC 750 evaluation board
+    OS_CONSOLE_PC_EMULATOR - PC emulator
+    OS_CONSOLE_EMULATOR - Mac emulator
+
+It also says that the OS_CONSOLE_MINNOW and OS_CONSOLE_ARTHUR where console types used only for system bring-up within Nintendo and its partner companies.
+
+In later SDK's the function returns different values. 
