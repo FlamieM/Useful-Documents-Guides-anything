@@ -1,0 +1,70 @@
+Recently, I've been getting into modding RVT-R and RVT-H units.
+
+I really want to figure out how the IOSs differ from retail to development units, as well as the difference between the 64MB RAM units and the 128MB ram units. I'm also looking at how to patch new modules into the development IOSs.
+
+One thing I have been searching for is official wads of all the development IOSs. There really aren't easy to find. I considered making wads with a tool like ShowMiiWads, but I hate to use homebrew tools when messing around with development units.
+The tools are great, but were never meant to be used on development files. Who knows what weirdness might occur?
+
+A while back, I tried opening the update images that are included with the Wii SDK. These are named 'swupdate_56.21.29_us.gcm' and so on.
+GC-Tool can't open these files, and neither can trucha or WiiScrubber.
+
+So I did what I have always done when I have no idea what to do, I turned to my handy-dandy hex editor.
+
+Opening the update GCM reveals this:
+[​IMG]
+
+
+I was curious, so I opened another wii game in the editor.
+It looked like this:
+[​IMG]
+
+I started scrolling though the update gcm and found this, which looked just like the elebits header.
+[​IMG]
+
+
+I simply deleted the entire empty header and saved the file:
+[​IMG]
+
+There's no way this is going to work, right? That's too easy.
+Wrong. Use wii scrubber and the RVT common key:
+[​IMG]
+
+
+There you have it. Official RVT Wii wads.
+Enjoy. 
+
+Comments Of Interest:
+
+	
+
+    Woah. Okay.
+    There's some cool stuff out there.
+
+    There's some super interesting stuff if you do some digging.
+
+    First, there's a separate boot2 for 64MB system and 128MB systems.
+
+    There's a file called boot1.aes
+    https://pastebin.com/7H13VPYU
+    Windows says the file is 128k, while ubuntu says 131.1k.
+    I thought it might be the encryption key, but it's way too big for that.
+
+    EDIT:
+    That key is probably included because boot1 doesn't have a proper hash burned into OTP like a retail wii. Rather, the burned hash is actually all zeros. This probably has something to do with that, but I can't imagine what.
+  
+ Comment 2
+   Interesting.
+I had never really considered investigating the update files.
+
+So in theory, it should be possible to extract the firmware wads from the swupdate.gcm file, copy them to an SD card and run them on and RVT-R Reader in order to update the firmware on the system, without the need of burning the update file to an RVT-R disc?
+
+I also noticed that early firmware updates once listed all of the wads that where included when you run the swupdate.gcm file:
+[​IMG]
+
+Unfortunatly later swupdate disc's stopped listing all of the wads that where included, but as you have demonstrated above, that is possible with a simple hex edit and Wii Scrubber.
+
+Also in regards to your PM, I am happy to share any data from my RVT-H systems that are not game builds.
+Just message me which system/banks that you are interested in, because some of the items are already available, such as Wii Menu Changer v1.16 and I believe Wii Menu Changer v1.11, but I don't have access to my files at the moment.
+
+I assume that you would be interested in the firmware 9.4.1 above? 
+
