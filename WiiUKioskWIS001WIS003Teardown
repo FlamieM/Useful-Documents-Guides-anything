@@ -1,0 +1,31 @@
+	
+
+    The Nintendo Wii U kiosk GamePad (WIS-003) appears to be a retrofitted retail GamePad controller.
+
+    The battery compartment contains two PCBs. The first PCB (DRCI-RELAY-01) takes a six pin connector from the Wii U console routes it to the battery connector. As far as I can tell this cable only carries power. It has a button and a blue/black cable which disappears into the controller. The button is the GamePad's power button, which is disabled on the front. The blue/black cable is soldered to where the power button would normally be.
+
+    The RF board does some RF voodoo. I have no idea. There's a small switch on the underside.
+
+    [​IMG]
+
+    The main board looks identical to the retail release, but P22 is populated with a PCB RF connector. The wireless daughter-board normally routes two RF cables off to the left. These are instead routed into the battery compartment.
+
+    [​IMG]
+
+    [​IMG]
+
+    [​IMG]
+
+    The console, WIS-001, is a little more exotic. It has two boards not present in retail consoles: CATI-RELAY-01 and CATI-CTRL. The motherboard is WUP-CR-01, and has some additional headers present. It appears to be a different spin of the board than the final retail board. The DVD drive is a normal retail version, RD-DKL034ND in my case.
+
+    [​IMG]
+
+    [​IMG]
+
+    [​IMG]
+
+    [​IMG]
+     
+
+aspect, Jun 12, 2015
+#1
