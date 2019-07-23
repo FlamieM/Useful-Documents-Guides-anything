@@ -1,0 +1,71 @@
+This is a guide on how to setup the NDEV for basic use and running single layer and dual layer Wii games/homebrew applications (I have tested most of the dual layer games and only Super Smash Bros Brawl didn't work). There are a few things you will need to set everything up:
+
+
+An NDEV
+
+3 USB cables
+
+A computer running Windows XP
+
+The Nintendo Revolution SDK
+
+NDEV Installer and Drivers
+
+@cmonkey 's DOL2ELF program (runs via the CMD)
+
+
+
+After you have downloaded everything run the NDEV installer and install the NDEV software to the root of your C:\ directory.
+
+Next hook up your NDEV to your Windows XP PC via the 3 USB cables and connect it to your TV, and then turn on the NDEV. You will get a prompt asking how the drivers should be installed. Select the option to install them manually and select the NDEV Drivers folder when asked. Do this for all 3 drivers. After this is done you should get a display on your TV like this:
+vlcsnap-2016-09-25-11h33m01s835.png
+
+Now you need to install the Nintendo Revolution SDK (this is a guide for SDK version 3.1 patch 4, I will include a link for the 3.3 patch 2 SDK if you want to use that instead). I have already setup the files/folders for the SDK for you so all you need to do is copy the blt folder to the root of your C:\ drive and that’s it.
+
+The next thing you need to do is to setup your Environment Variables. Click start and right click on Computer. Go into the properties, click advanced, and then Environment Variables. From there add the following to the System Variables:
+Untitled.png
+
+Now that your Environment Variables are setup you need to set the DvdRoot. You will first need a Wii game and or homebrew game/application (files and folders not an ISO or WBFS file). Go into the CMD and type:
+
+
+setndenv DvdRoot “PATH”
+
+
+After DvdRoot type the path to where the files for the game/application are located (without quotes). For Wii games the path needs to be set to the files folder.
+EDIT: Its also a good idea to make sure there are no spaces between any words or letters when naming any of the folders in the file path. This could cause problems with the DvdRoot when trying to run a game.
+
+
+Then after the DvdRoot is set copy cmonkeys DOL2ELF program and paste it in the folder where the main.dol (or boot.dol) is located. Now in the CMD go to the same folder and use the DOL2ELF program to convert your main.dol (or boot.dol) to a main.elf (or boot.elf) using the following command:
+
+
+dol2elf main.dol main.elf
+
+or like this:
+
+dol2elf boot.dol boot.elf
+
+
+This should give you a .elf file that you can run through the SDK.
+
+So now the last thing that needs to be done is to use the ndrun command to tell the SDK to run the new .elf file and run the game/application on the NDEV. Make sure to go to the folder where the .elf file is located using the CMD and type the following command:
+
+
+ndrun main.elf
+
+or like this:
+
+ndrun boot.elf
+
+
+Now the SDK should launch the game. It should look like this when loading/running:
+vlcsnap-2016-09-25-11h33m33s065.png
+vlcsnap-2016-09-25-11h33m48s267.png
+
+It will also make a .dlf file (in the same folder as the .elf file) that can be used with the NDEV Optical Disk Emulator program from now on. J̶u̶s̶t̶ ̶m̶a̶k̶e̶ ̶s̶u̶r̶e̶ ̶t̶o̶ ̶s̶e̶t̶ ̶t̶h̶e̶ ̶D̶v̶d̶R̶o̶o̶t̶ ̶e̶v̶e̶r̶y̶ ̶t̶i̶m̶e̶ ̶t̶h̶e̶ ̶c̶o̶m̶p̶u̶t̶e̶r̶ ̶o̶r̶ ̶C̶M̶D̶ ̶i̶s̶ ̶r̶e̶s̶t̶a̶r̶t̶e̶d̶ ̶b̶e̶f̶o̶r̶e̶ ̶l̶a̶u̶n̶c̶h̶i̶n̶g̶ ̶t̶h̶e̶ ̶g̶a̶m̶e̶ ̶o̶r̶ ̶a̶p̶p̶l̶i̶c̶a̶t̶i̶o̶n̶.̶ After testing I can confirm that you don't need to set the DvdRoot every time. You only need to do it before running the ndrun command to launch a game for the first time.
+
+
+Also huge thanks to @cmonkey for creating the DOL2ELF program! Without it booting .dol files on the NDEV would not be possible.
+
+
+I hope that this guide helps some of you. This is my first attempt at a guide like this so if I messed up or you need some help please feel free to contact me and let me know.
+ 
