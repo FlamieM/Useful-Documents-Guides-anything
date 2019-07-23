@@ -14,3 +14,13 @@ In the first revision of "Revolution Operating System" 27/02/2006 it lists the r
 It also says that the OS_CONSOLE_MINNOW and OS_CONSOLE_ARTHUR where console types used only for system bring-up within Nintendo and its partner companies.
 
 In later SDK's the function returns different values. 
+
+    Yes you are right, those are the same values returned from the Dolphin SDK.
+
+    The earliest OS header files that I have are from Wii SDK 2.1 and like you say, those do have the extra definitions for the RVL consoles.
+
+    The "Revolution Operating System" document that I quoted above was dated 27/02/2006, so maybe Nintendo added the extra strings before the initial release of the Wii SDK.
+
+    Would be great if we had an early SDK.
+     
+
